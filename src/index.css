@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  --color-brand-gold: #b08d57;
+  --color-brand-gold-hover: #c4a57a;
+  --color-brand-charcoal: #1A1A1A;
+  --color-brand-cream: #F9F7F4;
+  --color-brand-stone: #78716c;
+  --color-brand-paper: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-white text-brand-charcoal antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-premium {
+  @apply bg-brand-gold text-white px-10 py-5 rounded-[2px] font-bold text-[10px] uppercase tracking-[0.25em] transition-all duration-500 hover:bg-brand-gold-hover hover:shadow-2xl active:scale-95;
+}
+
+.section-padding {
+  @apply py-24 md:py-48 px-6 md:px-24;
+}
+
+.letter-spacing-wide {
+  letter-spacing: 0.15em;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.premium-shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s linear infinite alternate;
+}
+
+/* DatePicker Premium Styling */
+.react-datepicker {
+  @apply font-sans border-black/5 shadow-2xl rounded-none! p-4!;
+}
+
+.react-datepicker__header {
+  @apply bg-white border-b-black/5 pt-4!;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-brand-gold! rounded-none!;
+}
+
+.react-datepicker__day:hover {
+  @apply bg-brand-cream! rounded-none!;
+}
+
+.react-datepicker__current-month {
+  @apply font-serif italic text-xl mb-4!;
+}
+
+.react-datepicker__navigation {
+  @apply top-6!;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
